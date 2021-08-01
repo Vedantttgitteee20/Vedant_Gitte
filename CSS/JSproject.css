@@ -29,7 +29,14 @@ body {
     background-color: #379BDA;
 
   }
-
+  .select-box, .play-board, .result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all o.4s ease;
+  }
+  
   /* selection box */
   .select-box{
     margin-top: 45px;
@@ -41,7 +48,12 @@ body {
     /* top: 50%;
     left: 50%;
     position: absolute; */
-    display: none;
+    /* display: none; */
+  }
+  .select-box.hide{
+    opacity: 0;
+    pointer-events: none;
+    
   }
   .select-box header{
     font-size: 23px;
@@ -71,20 +83,30 @@ body {
   .options button.playerX{
     margin-right: 5px;
   }
-  .options button.playerY{
+  .options button.playerO{
     margin-left: 5px;
   }
-  .options button:hover{
+  .options button:hover,
+  .result-box .btn button:hover{
     transform: scale(0.96);
   }
 
 
   /* playboard */
+  .play-board{
+    opacity: 0;
+    pointer-events: none;
+  }
+  .play-board.show{
+    opacity: 1;
+    pointer-events: none;
+  }
   .play-board .details{
     margin-top: 80px;
     background: #fff;
   padding: 7px;
   border-radius: 5px;
+  
   }
    
   .play-board .details .players{
@@ -104,6 +126,7 @@ body {
     text-align: center;
     position: relative;
     z-index: 5;
+    
   }
   .details span:first-child{
     color: #fff;
@@ -114,11 +137,22 @@ body {
   .details .slider{
     position: absolute;
     top:0;
-    left: 50%;
+    left: 0;
     height:100%;
     width: 50%;
     background: #56baed;
     border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  .players.active span:first-child{
+    color: #56baed;
+  }
+  .players.active span:nth-child(2){
+    color: #fff;
+  }
+  .players.active .slider{
+    left: 50%;
   }
   .play-board .play-area{
     margin-top: 20px;
@@ -133,4 +167,38 @@ body {
     font-size: 40px;
     text-align: center;
     line-height: 80px;
+  }
+
+  .result-box{
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 210px;
+    display: none;
+    margin-top: 80px;
+  }
+  .result-box .won-text{
+  font-size: 25px;
+  font-weight: 500;
+  display: flex;
+  }
+  .result-box .won-text p{
+    font-weight: 700;
+    margin: 0 5px;
+  }
+  .result-box .btn{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .result-box .btn button{
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    background: #FE9898;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
