@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
-body {
+/* body {
   
   width: 100vw;
   height: 100vh;
@@ -65,4 +65,18 @@ body {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     background: rgb(255, 7, 110);
+  } */
+
+
+
+
+  /* New */
+  body{
+    background-color: #FFECF2;
+    margin-top: 0%;
+    margin-left: 0%;
+}
+  .navbar{
+    position: relative;
+    background-color: #379BDA;
   }
