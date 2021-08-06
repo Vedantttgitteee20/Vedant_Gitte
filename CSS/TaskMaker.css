@@ -1,0 +1,118 @@
+
+  body{
+    background-color: #FFECF2;
+    margin-top: 0%;
+    margin-left: 0%;
+}
+  .navbar{
+    
+    background-color: #379BDA;
+    transition: .5s ease;
+  }
+  .wrapper{
+    /* font-family: 'Bad Script'; */
+    /* font-family: 'Finger Paint'; */
+    margin-top: 80px;
+    max-width: 400px;
+    width: 100%;
+    background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+    border-radius: 5px;
+    padding: 25px;
+    /* background-color: #9C3D54; */
+  }
+  .wrapper .todoList{
+    max-height: 250px;
+    overflow: auto;
+  }
+  .wrapper .inputField{
+    display:flex;
+    height: 45px;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .inputField input{
+    
+    outline: none;
+    width:85%;
+    height: 100%;
+    
+    border: 1px solid #ccc;
+    font-size: 17px;
+    border-radius: 3px;
+    padding-left: 15px;
+  }
+  .todotitle{
+    font-size: 35px;
+  }
+  .inputField button{
+    width: 50px;
+    height: 100%;
+    border: none;
+    color: #fff;
+    margin-left: 5px;
+    font-size: 21px;
+    outline: none;
+    background: #8E49E8;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+  }
+  .inputField button.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .todoList li{
+    font-family: 'Finger Paint';
+    list-style: none;
+    height:45px;
+    overflow: hidden;
+    line-height: 45px;
+    position: relative;
+    background: #f2f2f2;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 0 15px;
+  }
+  .todoList li span{
+    position: absolute;
+    right:-45px;
+    
+    background: red;
+    color: #fff;
+    width:45px;
+    text-align: center;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+  }
+  .todoList li:hover span{
+    right: 0px;
+  }
+
+  .wrapper .TaskFooter{
+    display: flex;
+    width: 100%;
+    font-size: 18px;
+    justify-content: space-between;
+  }
+  .TaskFooter button{
+   
+    height: 100%;
+    border:none;
+    outline: none;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 3px;
+    background: #8E49E8;
+    color: #fff;
+    opacity: 0.6;
+    font-size: 18px;
+  }
+  
+  .TaskFooter button.active{
+    opacity: 1;
+  }
+
