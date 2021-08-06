@@ -3,7 +3,6 @@ Website in making.
 
 
 Problems---
-Most problem faced in placing all objects,most of them overlapped
-made 3 games in folder not sure how to add
-Navbar gave most trouble...
-
+Content kantarta
+Taskmaster started
+Have to add something in JS project
