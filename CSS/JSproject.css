@@ -36,7 +36,9 @@ body {
     transform: translate(-50%,-50%);
     transition: all o.4s ease;
   }
-  
+  .tic-tac-toe-game section{
+    padding: 0px;
+  }
   /* selection box */
   .select-box{
     margin-top: 45px;
