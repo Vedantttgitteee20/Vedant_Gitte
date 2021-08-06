@@ -79,4 +79,5 @@
   .navbar{
     position: relative;
     background-color: #379BDA;
+    transition: .5s ease;
   }

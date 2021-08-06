@@ -8,15 +8,16 @@
     font-size: larger; 
     font-weight: bold;
     color: azure;
-    transition: .5s;
+    transition: .5s ease;
     position: fixed;
     /* color: #FEE715FF; */
+    font-size: 22px;
     
   }
-  .navbar.sticky{
+  /* .navbar.sticky{
     padding: 15px 0;
     background: crimson;
-}
+} */
   html{
     scroll-behavior: smooth;
 }
@@ -79,4 +80,17 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.5s;
 }
