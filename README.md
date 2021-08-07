@@ -3,6 +3,5 @@ Website in making.
 
 
 Problems---
-Content kantarta
-Taskmaster started
-Have to add something in JS project
+less Content
+Js project issue not solved even PlayerX and Player0 are counted in boxes--urgency moderate
