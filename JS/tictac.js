@@ -31,4 +31,19 @@ let playerOIcon = "far fa-circle";
          element.innerHTML = `<i class="${playerXIcon}"></i>`;
          players.classList.add("active");
      }
+     element.style.pointerEvents="none";
+     bot();
     }
+    
+function bot(){
+    let array=[];
+    for(let i=0; i<allBox.length;i++){
+        if(allBox[i].childElementCount == 0){
+            array.push(i);
+            // console.log(i+" "+ "has no child")
+        }
+    }
+    let randomBox = array[Math.floor(Math.random()*array.length)]
+    console.log(randomBox);
+    // allBox[randomBox]
+}

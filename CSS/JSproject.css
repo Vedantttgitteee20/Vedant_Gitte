@@ -98,54 +98,58 @@ body {
   .play-board{
     opacity: 0;
     pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
   }
   .play-board.show{
     opacity: 1;
-    pointer-events: none;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
   }
   .play-board .details{
-    margin-top: 80px;
-    background: #fff;
-  padding: 7px;
-  border-radius: 5px;
-  
-  }
-   
-  .play-board .details .players{
-  display: flex;
-  width:100%;
-  position: relative;
-  justify-content: space-between;
-  }
-  .play-board .details span{
-    color: #56baed;
-    width: 100%;
+    padding: 7px;
     border-radius: 5px;
-    padding: 7px 0;
-    font-size: 19px;
-    font-weight: 500;
-    cursor: default;
-    text-align: center;
-    position: relative;
-    z-index: 5;
-    
+    background: rgb(255, 255, 255);
   }
-  .details span:first-child{
+  .play-board .players{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
+  .players span{
+    position: relative;
+    z-index: 2;
+    color: #56baed;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+    transition: all 0.3 ease;
+  }
+  .players.active span:first-child{
     color: #fff;
   }
-  .play-board section{
-    display: flex;
+  .players.active span:last-child{
+    color: #56baed;
   }
-  .details .slider{
+  .players span:first-child{
+    color: #fff;
+  }
+  .players .slider{
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
-    height:100%;
     width: 50%;
+    height: 100%;
     background: #56baed;
     border-radius: 5px;
-    z-index: 2;
     transition: all 0.3s ease;
+  }
+  .players.active .slider{
+    left: 50%;
   }
   .players.active span:first-child{
     color: #56baed;
@@ -156,19 +160,24 @@ body {
   .players.active .slider{
     left: 50%;
   }
-  .play-board .play-area{
+  .play-area{
     margin-top: 20px;
   }
-  .play-board section span{
+  .play-area section{
+    display: flex;
+    margin-bottom: 1px;
+  }
+  .play-area section span{
     display: block;
+    height: 90px;
+    width: 90px;
     margin: 2px;
-    height: 80px;
-    width: 80px;
-    background: #FFBCBC;
-    border-radius: 5px;
+    color: #56baed;
     font-size: 40px;
-    text-align: center;
     line-height: 80px;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
   }
 
   .result-box{
