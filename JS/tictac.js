@@ -4,6 +4,9 @@ selectOBtn=selectBox.querySelector(".playerO");
 playBoard=document.querySelector(".play-board");
 allBox = document.querySelectorAll(".play-area span");
 players = document.querySelector(".players");
+resultBox = document.querySelector(".result-box");
+wonText = resultBox.querySelector(".won-text");
+replayBtn= resultBox.querySelector("button");
 window.onload= () =>{
     for(let i =0;i<allBox.length;i++){
         allBox[i].setAttribute("onclick","clickedBox(this)");
@@ -22,6 +25,7 @@ window.onload= () =>{
 let playerXIcon = "fas fa-times";
 let playerOIcon = "far fa-circle";
 let playerSign="X";
+let runBot=true;
  function clickedBox(element){
     //  console.log(element);
     playerSign= "X";
@@ -42,13 +46,14 @@ let playerSign="X";
      let randomDelayTime = ((Math.random()*1000)+200).toFixed();
     //  console.log(randomDelayTime);
      setTimeout(() =>{
-        bot();
+        bot(runBot);
      },randomDelayTime);
      
     }
     
-function bot(){
-    playerSign= "O";
+function bot(runBot){
+    if(runBot){
+        playerSign= "O";
     let array=[];
     for(let i=0; i<allBox.length;i++){
         if(allBox[i].childElementCount == 0){
@@ -70,8 +75,10 @@ function bot(){
          allBox[randomBox].setAttribute("id",playerSign);
      }
     }
-    // allBox[randomBox].style.pointerEvents="none";
+    allBox[randomBox].style.pointerEvents="none";
     players.style.pointerEvents = "auto";
+    selectWinner();
+    }
 }
 
 function getClass(idname){
@@ -87,5 +94,30 @@ function selectWinner(){
     // checkThreeClasses(val1,val2,val3,sign)
     if(checkThreeClasses(1,2,3,playerSign) || checkThreeClasses(4,5,6,playerSign) || checkThreeClasses(7,8,9,playerSign) || checkThreeClasses(1,4,7,playerSign) || checkThreeClasses(2,5,8,playerSign) || checkThreeClasses(3,6,9,playerSign) || checkThreeClasses(1,5,9,playerSign) || checkThreeClasses(3,5,7,playerSign)){
         console.log(playerSign+" is Winner")
+        runBot=false;
+        bot(runBot);
+        setTimeout(()=>{
+            playBoard.classList.remove("show");
+            resultBox.classList.add("show");
+        },700);
+
+        wonText.innerHTML =`Player<p>${playerSign}</p> won the game`;
+    
+    }else{
+        if(getClass(1)!="" && getClass(2)!="" && getClass(3)!="" && getClass(4)!="" && getClass(5)!="" && getClass(6)!="" && getClass(7)!="" && getClass(8)!="" && getClass(9)!="")
+        {
+            runBot=false;
+        bot(runBot);
+        setTimeout(()=>{
+            playBoard.classList.remove("show");
+            resultBox.classList.add("show");
+        },700);
+
+        wonText.innerHTML =`Match Draw`;
+        }
     }
+}
+
+replayBtn.onclick= ()=>{
+    window.location.reload();
 }
