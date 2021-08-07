@@ -21,7 +21,7 @@ body {
     background-color: #379BDA;
 }
   header{
-    background: url(../images/background.jpg) no-repeat center;
+    background: url(../IMAGES/background.jpg) no-repeat center;
     background-size: cover;
     height: 100vh;
     min-height: 500px;
